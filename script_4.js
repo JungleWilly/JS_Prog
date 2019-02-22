@@ -382,10 +382,81 @@ array = [
   "@LoriHelloc"
 ];
 
+console.log("===================================================");
+
+let sL = array.length;
+console.log(`il y a ${sL} journalistes`)
+
+console.log("===================================================");
 
 let count = 0;
 for (let i = 0; i < array.length; i++)
 {
  if(array[i].match(/\d/)){ count++; }
 }
-console.log(count);
+console.log(`${count} comptes possedent un chiffre`);
+
+console.log("===================================================");
+
+const textFilter = (requete) => { 
+  return array.filter(el =>  el.toLowerCase().indexOf(requete.toLowerCase()) > -1);
+}
+
+console.log(` il y a ${textFilter('aude').length} compte qui ont "aude"`);
+
+console.log("===================================================");
+
+let countMaj = 0
+array.forEach(element => {
+  
+  let withoutA = element.slice(1);
+  if (withoutA[0] === withoutA[0].toUpperCase()){countMaj++;}
+  
+});
+console.log(`il y a ${countMaj} comptes qui ont une maj après le @`);
+
+console.log("===================================================");
+
+let totalMaj = 0
+for (let e = 0; e < array.length; e++)
+{
+ if(array[e].match(/[A-Z]/g)){ totalMaj++; }
+}
+console.log(`${totalMaj} comptes possedent une Majuscule`);
+
+console.log("===================================================");
+
+function numberOf_(){
+  let i = 0;
+  substring = "_";
+  array.forEach(journalist => {
+    i += journalist.split("_").length-1;
+  });
+  console.log(`Le nombre de journalistes dont le handle contient un "_" est ${i}`);
+ };
+
+ console.log("===================================================");
+
+ console.log(numberOf_());
+ let arrayWithoutA = [];
+ array.forEach(element => {
+   
+  let resultat = element.slice(1);
+  arrayWithoutA.push(resultat);
+  
+  order = arrayWithoutA.sort();
+});
+console.log(order);
+
+console.log("===================================================");
+
+order.sort(function(a, b){
+  return a.length - b.length;
+});
+console.log(order.slice(0,50));
+
+console.log("===================================================");
+
+const indice = array.findIndex(el => el === "@epenser");
+console.log(`${array[indice]} est à la place ${(indice)} de l'array initial `);
+

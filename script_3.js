@@ -5,6 +5,7 @@ let answerNumber = Number(answer);
 let hash = "#";
 let space = " ";
 
+console.log("===================================================");
 
 let row = 1;
 while(row <= answerNumber){

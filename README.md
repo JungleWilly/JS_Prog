@@ -1,0 +1,1 @@
+Salut ouvre juste l'index dans le navigateur et n'oublie de faire f12 ;).
